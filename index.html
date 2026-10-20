@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CityCare | Online Complaint Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#"><span class="brand-icon">✦</span> CityCare</a>
+    <nav aria-label="Main navigation">
+      <a href="#services">Services</a>
+      <a href="#steps">How it works</a>
+      <a class="nav-button" href="#register">Register Complaint</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">YOUR CITY, YOUR VOICE</p>
+        <h1>Let’s make our city <span>better together.</span></h1>
+        <p class="hero-text">Report street-light issues, water leakage, road damage and drainage problems in one simple place.</p>
+        <a class="primary-button" href="#register">Report an issue <span>→</span></a>
+        <p class="note">Student mini-project demo · No complaint is sent to an authority.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sun"></div><div class="building building-one"></div>
+        <div class="building building-two"></div><div class="building building-three"></div>
+        <div class="plant">✿</div><div class="art-card"><span>✓</span><div><b>Every issue matters</b><small>Help improve your neighbourhood</small></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="section-heading">
+        <p class="eyebrow">WHAT CAN YOU REPORT?</p>
+        <h2>Choose a complaint category</h2>
+        <p>Pick the issue that best describes the problem in your area.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card pink"><div class="service-icon">💡</div><h3>Street Light</h3><p>Lights not working or damaged street lamps.</p></article>
+        <article class="service-card blue"><div class="service-icon">💧</div><h3>Water Leakage</h3><p>Leaking pipes or water supply problems.</p></article>
+        <article class="service-card yellow"><div class="service-icon">🛣️</div><h3>Road Problem</h3><p>Potholes, damaged roads or unsafe paths.</p></article>
+        <article class="service-card green"><div class="service-icon">🌧️</div><h3>Drainage</h3><p>Blocked drains or rainwater stagnation.</p></article>
+      </div>
+    </section>
+
+    <section class="form-section" id="register">
+      <div class="form-intro">
+        <p class="eyebrow">TAKE THE FIRST STEP</p>
+        <h2>Register your complaint</h2>
+        <p>Share a few details so the issue can be clearly understood in this demo.</p>
+        <div class="mini-tip"><span>ⓘ</span> Please do not enter real sensitive or private information in this student demo.</div>
+      </div>
+      <form id="complaint-form" class="complaint-form">
+        <div class="field-row">
+          <label>Full name<input type="text" name="name" placeholder="Enter your name" required></label>
+          <label>Email or phone<input type="text" name="contact" placeholder="Your contact detail" required></label>
+        </div>
+        <div class="field-row">
+          <label>Complaint category
+            <select name="category" required>
+              <option value="">Select an issue</option>
+              <option>Street Light</option><option>Water Leakage</option>
+              <option>Road Problem</option><option>Drainage</option><option>Other</option>
+            </select>
+          </label>
+          <label>Problem location<input type="text" name="location" placeholder="Area / street name" required></label>
+        </div>
+        <label>Describe the problem<textarea name="description" rows="4" placeholder="Explain the issue briefly..." required></textarea></label>
+        <button class="primary-button submit-button" type="submit">Submit complaint <span>→</span></button>
+        <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="section steps-section" id="steps">
+      <div class="section-heading">
+        <p class="eyebrow">SIMPLE AND CLEAR</p><h2>How it works</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step"><span>01</span><h3>Share details</h3><p>Choose a category and describe the issue.</p></div>
+        <div class="step"><span>02</span><h3>Review</h3><p>In a real system, the responsible team would review it.</p></div>
+        <div class="step"><span>03</span><h3>Follow up</h3><p>A future version could provide status updates.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-icon">✦</span> CityCare</a><p>Fundamentals of Full Stack · Mini Project</p><small>Front-end demonstration built with HTML and CSS.</small></footer>
+
+  <script>
+    // Demo only: this form does not send or save complaint data.
+    document.getElementById('complaint-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      document.getElementById('form-message').textContent =
+        'Demo submitted successfully! No data was sent or saved.';
+      this.reset();
+    });
+  </script>
+</body>
+</html>
